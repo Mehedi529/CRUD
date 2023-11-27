@@ -1,6 +1,7 @@
 //Basic
 const express = require('express');
 const app = new express();
+const router = require('./src/routes/api')
 const bodyParser = require('body-parser');
 
 
@@ -50,6 +51,8 @@ async function connectToDatabase(){
 connectToDatabase();
 
 
+//Routing Implement
+app.use("/api/v1",router)
 
 
 module.exports = app;
